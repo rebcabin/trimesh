@@ -136,8 +136,11 @@ if __name__ == '__main__':
                   'cycloidal.ply',
                   'featuretype.STL',
                   'angle_block.STL',
-                  'soup.stl',
-                  'bun_zipper_res2.ply']
+                  'soup.stl' #,
+                  #'bun_zipper_res2.ply' ... [bbeckman: this one doesn't exist
+                  # any more; apparently the regression tests haven't been
+                  # run in a while.]
+                  ]
 
     setup = 'import generic as g;'
     setup += 'm=g.get_mesh(\'{}\');'
@@ -172,7 +175,8 @@ if __name__ == '__main__':
 
     result = {}
 
-    result['cpu_info'] = subprocess.check_output(['cat', '/proc/cpuinfo'])
+    # result['cpu_info'] = subprocess.check_output(['cat', '/proc/cpuinfo'])
+    # [bbeckman: this throws from 'subprocess.py'. Work around for now]
     result['baseline'] = baseline.tolist()
     result['timestamp'] = time.time()
     result['timings'] = timings

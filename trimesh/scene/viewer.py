@@ -122,6 +122,10 @@ class SceneViewer(pyglet.window.Window):
                      'scale': self.scene.scale,
                      'ball': Arcball()}
 
+        nsw = self._nswindow # [bbeckman: was None, inexplicably]
+        #if nsw is None:
+        #    self._nswindow = pyglet.window.Window()
+
         if (self.width is not None and
                 self.height is not None):
             self.view['ball'].place([self.width / 2.0,

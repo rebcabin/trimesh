@@ -116,8 +116,25 @@ def load_mesh(file_obj, file_type=None, **kwargs):
 
     # make sure we keep passed kwargs to loader
     # but also make sure loader keys override passed keys
-    kwargs.update(mesh_loaders[file_type](file_obj,
-                                          file_type))
+    loader_keys = mesh_loaders[file_type](file_obj, file_type)
+    # [bbeckman: introduce the variable above to track in the debugger.
+    # Apparently, the fbx loader produces a list of dictionaries, whereas the
+    # STL loader, used in all the examples in trimesh, produces a disctionary.
+    # That trips up kwargs.update. We'll just work around it for our cases.]
+    if isinstance(loader_keys, list):
+        kwargs.update(loader_keys[0])
+    else:
+        kwargs.update(loader_keys)
+
+    # [bbeckman: The fbx loader returns a vertex_colors key whose value is
+    # the empty list, []. That apparently causes some downstream methods to
+    # silently fail. The failure occurs in the ColorVisuals call at the end
+    # of visual.create_visual, which is called on line 105 of base.py. We'll
+    # work around it for our cases.]
+    if 'vertex_colors' in kwargs and \
+            not kwargs["vertex_colors"]: # idiom for empty
+        kwargs.pop("vertex_colors")
+
     if util.is_file(file_obj):
         file_obj.close()
 
