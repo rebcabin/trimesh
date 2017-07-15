@@ -238,30 +238,24 @@ import numpy as np
 import trimesh
 import pprint
 
-# meshes = [trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-#                             '/64907_Fanuc_430_Robot'
-#                             '/armature_rigging_just_mesh_19_after_mathematica'
+data_home_directory = '../../Ops-robotics-rsimcon/content/raw/mesh' \
+                      '/64907_Fanuc_430_Robot/'
+
+# meshes = [trimesh.load_mesh(data_home_directory +
+#                             'armature_rigging_just_mesh_19_after_mathematica'
 #                             '.obj')]
 
-# meshes = [trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-#                              '/64907_Fanuc_430_Robot'
-#                              '/armature_rigging_just_mesh_19.stl')]
+# meshes = [trimesh.load_mesh(data_home_directory +
+#                             '/armature_rigging_just_mesh_19.stl')]
 
-# meshes = [trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-#                             '/64907_Fanuc_430_Robot'
-#                             '/armature_rigging_groups.obj')]
+# meshes = [trimesh.load_mesh(data_home_directory +
+#                             'armature_rigging_groups.obj')]
 
-# meshes = [trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-#                             '/64907_Fanuc_430_Robot'
-#                             '/one_two_three_cuboid_after_meshmixer.obj')]
+# meshes = [trimesh.load_mesh(data_home_directory +
+#                             'one_two_three_cuboid_after_meshmixer.obj')]
 
-# meshes = [trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-#                             '/64907_Fanuc_430_Robot'
-# '/armature_rigging_just_mesh_19_after_repair_in_meshmixer_and_setting_units_to_meters.obj')]
-
-
-data_home_directory = '../../Ops-robotics-rsimcon/content/raw/mesh' \
-                      '/64907_Fanuc_430_Robot'
+# meshes = [trimesh.load_mesh(data_home_directory +
+# 'armature_rigging_just_mesh_19_after_repair_in_meshmixer_and_setting_units_to_meters.obj')]
 
 # not yet producing good output
 def export_obj (mesh, filename):
@@ -281,9 +275,13 @@ def export_obj (mesh, filename):
     fd.close()
     pass
 
-meshes = trimesh.load_meshes('../../Ops-robotics-rsimcon/content/raw/mesh'
-                             '/64907_Fanuc_430_Robot/armature_rigging_groups'
-                             '-binary-7.4-z-forward-y-up.fbx')
+# meshes = trimesh.load_meshes(
+#     data_home_directory +
+#     'armature_rigging_groups-binary-7.4-z-forward-y-up.fbx')
+
+meshes = [trimesh.load_mesh(
+    data_home_directory +
+    'armature_rigging_groups_submesh_019_repaired.obj')]
 
 def short (collection, near = 3):
     """Friendly subsetting for notebooks. Casts its argument to a list."""
@@ -299,6 +297,8 @@ def short (collection, near = 3):
 for i in range(len(meshes)):
     mesh = meshes[i]
 
+    # mesh.fill_holes()
+
     # ??????????????????????????????????????????????????????????????????????
     # since the mesh is watertight ???????????????? , it means there is a
     # volumetric center of mass which we can set as the origin for our mesh
@@ -307,7 +307,7 @@ for i in range(len(meshes)):
     # if there are multiple bodies in the mesh we can split the mesh by
     # connected components of face adjacency. If this example mesh
     # is a single watertight body we get a list of one mesh
-    mesh.split()
+    # mesh.split()
 
     pp = pprint.PrettyPrinter(indent = 2)
     # pp.pprint(mesh._cache.cache)
@@ -338,7 +338,6 @@ for i in range(len(meshes)):
         h2 = h * h
         d2 = d * d
         return [(h2 + d2) / 12.0, (w2 + d2) / 12.0, (h2 + w2) / 12.0]
-
 
     pp.pprint({'mesh_number':  i+1
            ,"n_vertices": len(mesh.vertices)
@@ -378,19 +377,19 @@ for i in range(len(meshes)):
     for facet in mesh.facets:
         mesh.visual.face_colors[facet] = trimesh.visual.random_color()
 
-    mesh.export(data_home_directory + '/' +
-                'armature_rigging_groups_submesh_%0.3d.dae' % (i+1),
-                'collada')
-
-    mesh.export(data_home_directory + '/' +
-                'armature_rigging_groups_submesh_%0.3d.off' % (i+1),
-                'off')
+    # mesh.export(data_home_directory +
+    #             'armature_rigging_groups_submesh_%0.3d.dae' % (i+1),
+    #             'collada')
+    #
+    # mesh.export(data_home_directory +
+    #             'armature_rigging_groups_submesh_%0.3d.off' % (i+1),
+    #             'off')
 
     # export_obj(
     #     mesh,
     #     'armature_rigging_groups_submesh_%0.3d.obj' % (i + 1))
 
-    # mesh.show()
+    mesh.show()
     # (mesh + mesh.bounding_cylinder).show()
 
     # mesh.apply_transform(trimesh.transformations.random_rotation_matrix())
