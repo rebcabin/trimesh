@@ -99,7 +99,6 @@ def export_collada(mesh):
 def export_dict64(mesh):
     return export_dict(mesh, encoding='base64')
 
-
 def export_dict(mesh, encoding=None):
     def encode(item, dtype=None):
         if encoding is None:

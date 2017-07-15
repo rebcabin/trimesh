@@ -1,0 +1,1016 @@
+
+__init__.py,0
+
+base.py,2968
+class Trimesh(40,766
+    def __init__(42,790
+    def process(159,6263
+    def md5(187,7330
+    def crc(202,7847
+    def faces(217,8244
+    def faces(237,9014
+    def faces_sparse(247,9361
+    def face_normals(262,9806
+    def face_normals(268,9965
+    def vertices(274,10140
+    def vertices(289,10618
+    def _validate_face_normals(293,10793
+    def vertex_normals(325,12172
+    def vertex_normals(346,13150
+    def bounding_box(354,13417
+    def bounding_box_oriented(371,14015
+    def bounding_sphere(388,14615
+    def bounding_cylinder(409,15386
+    def bounding_primitive(423,15784
+    def bounds(441,16428
+    def extents(457,16943
+    def scale(469,17264
+    def centroid(482,17638
+    def center_mass(502,18295
+    def volume(518,18837
+    def moment_inertia(531,19165
+    def principal_inertia_components(544,19550
+    def principal_inertia_vectors(560,20008
+    def triangles(575,20479
+    def triangles_tree(591,21106
+    def triangles_center(603,21431
+    def triangles_cross(615,21787
+    def edges(627,22095
+    def edges_face(641,22503
+    def edges_unique(653,22781
+    def edges_sorted(670,23392
+    def faces_unique_edges(680,23629
+    def euler_number(712,24667
+    def units(726,25105
+    def units(740,25431
+    def convert_units(746,25635
+    def merge_vertices(758,26058
+    def update_vertices(765,26308
+    def update_faces(793,27289
+    def remove_infinite_values(824,28448
+    def remove_duplicate_faces(835,28836
+    def rezero(842,29076
+    def split(849,29261
+    def face_adjacency(871,30065
+    def face_adjacency_edges(911,31191
+    def face_adjacency_angles(924,31619
+    def is_winding_consistent(938,32051
+    def is_watertight(953,32582
+    def is_empty(968,33074
+    def is_convex(979,33321
+    def kdtree(990,33564
+    def remove_degenerate_faces(1004,33975
+    def facets(1014,34354
+    def facets_area(1026,34654
+    def facets_normal(1039,34989
+    def facets_boundary(1054,35400
+    def fix_normals(1069,35947
+    def fill_holes(1078,36292
+    def subdivide(1088,36568
+    def smoothed(1108,37441
+    def section(1127,38164
+    def convex_hull(1157,39157
+    def sample(1169,39457
+    def remove_unreferenced_vertices(1184,39832
+    def unmerge_vertices(1193,40194
+    def apply_translation(1203,40588
+    def apply_scale(1221,41191
+    def apply_transform(1238,41678
+    def voxelized(1278,43416
+    def outline(1294,43845
+    def area(1321,44727
+    def area_faces(1333,44990
+    def mass_properties(1344,45273
+    def scene(1379,46698
+    def show(1389,46932
+    def submesh(1406,47445
+    def identifier(1427,48139
+    def identifier_md5(1440,48484
+    def export(1447,48681
+    def to_dict(1466,49426
+    def union(1480,49833
+    def difference(1496,50308
+    def intersection(1512,50818
+    def contains(1528,51332
+    def copy(1546,51920
+    def eval_cached(1571,52622
+    def __hash__(1602,53472
+    def __add__(1609,53634
+
+boolean.py,95
+def difference(4,27
+def union(22,476
+def intersection(40,905
+def boolean_automatic(59,1415
+
+bounds.py,151
+def oriented_bounds_2D(20,328
+def oriented_bounds(83,2858
+def minimum_cylinder(175,6903
+    def volume_from_angles(201,7822
+def corners(273,10372
+
+comparison.py,59
+def identifier_simple(16,439
+def identifier_hash(53,1373
+
+constants.py,362
+class NumericalToleranceMesh(9,187
+    def __init__(24,1010
+class NumericalResolutionMesh(34,1239
+    def __init__(39,1351
+class NumericalTolerancePath(51,1548
+    def __init__(75,3009
+class NumericalResolutionPath(94,3517
+    def __init__(106,4121
+def _log_time(122,4448
+    def timed(123,4471
+class MeshError(137,4827
+class TransformError(141,4866
+
+convex.py,100
+def convex_hull(21,288
+def is_convex(115,3732
+def planar_hull(148,4826
+def hull_points(184,6048
+
+creation.py,390
+def validate_polygon(25,507
+def extrude_polygon(41,947
+def extrude_triangulation(64,1562
+def triangulate_polygon(143,4490
+    def round_trip(176,5724
+    def add_boundary(190,6205
+def box(255,8516
+def icosahedron(288,9700
+def icosphere(309,10477
+    def refine_spherical(324,10943
+def uv_sphere(339,11364
+def capsule(408,13698
+def cylinder(452,15126
+def random_soup(496,16729
+
+geometry.py,321
+def plane_transform(14,240
+def transform_around(33,752
+def align_vectors(56,1296
+def faces_to_edges(107,2779
+def vector_angle(129,3423
+def triangulate_quads(155,4043
+def mean_vertex_normals(173,4464
+    def summed_sparse(188,4984
+    def summed_loop(200,5450
+def index_sparse(221,6130
+def medial_axis(278,8140
+
+graph.py,395
+def face_adjacency(26,500
+def shared_edges(84,2592
+def connected_edges(103,3075
+def facets(117,3456
+def split(164,5265
+def connected_components(205,6501
+    def components_networkx(225,7179
+    def components_graphtool(236,7683
+    def components_csgraph(246,8047
+def connected_component_labels(280,9447
+def smoothed(307,10371
+def is_watertight(335,11204
+def graph_to_svg(355,11755
+
+grouping.py,559
+def merge_vertices_hash(15,237
+def replace_references(24,499
+def group(41,1005
+def hashable_rows(72,2042
+def float_to_int(94,2759
+def unique_ordered(121,3737
+def merge_runs(142,4239
+def unique_float(173,4929
+def unique_rows(198,5720
+def unique_value_in_row(222,6503
+def group_rows(272,8053
+    def group_dict(299,9143
+    def group_slice(315,9718
+def boolean_rows(347,11115
+def group_vectors(371,11699
+def group_distance(389,12187
+def clusters(408,12766
+def blocks(428,13238
+def merge_intervals(468,14593
+    def merge_generator(481,14941
+
+inertia.py,115
+def cylinder_inertia(10,190
+def sphere_inertia(37,947
+def principal_axis(54,1302
+def transform_inertia(81,2065
+
+integrate.py,166
+def symbolic_barycentric(8,133
+    class evaluator:evaluator45,999
+        def __init__(47,1021
+        def __call__(52,1237
+def substitute_barycentric(86,2337
+
+interfaces/__init__.py,0
+
+interfaces/blender.py,20
+def boolean(26,766
+
+interfaces/generic.py,134
+class MeshScript:MeshScript11,162
+    def __init__(13,181
+    def __enter__(19,314
+    def run(55,1907
+    def __exit__(65,2267
+
+interfaces/scad.py,48
+def interface_scad(23,664
+def boolean(44,1398
+
+intersections.py,203
+def mesh_plane(9,97
+    def triangle_cases(30,700
+    def handle_on_vertex(88,2911
+    def handle_on_edge(100,3538
+    def handle_basic(106,3759
+def plane_lines(158,6058
+def planes_lines(207,7923
+
+io/__init__.py,0
+
+io/assimp.py,85
+def load_pyassimp(5,37
+    def LPMesh_to_Trimesh(20,443
+def load_cyassimp(41,1131
+
+io/export.py,209
+def export_mesh(11,161
+def export_off(46,1229
+def export_collada(73,2102
+def export_dict64(99,3001
+def export_dict(103,3076
+    def encode(104,3114
+def export_json(126,3886
+def export_msgpack(132,4007
+
+io/load.py,443
+    def load_path(26,523
+    def path_formats(34,826
+def mesh_formats(38,870
+def available_formats(42,929
+def load(49,1116
+def load_meshes(95,2698
+    def process_one_mesh 102,3107
+def find_this_function 122,3868
+def load_mesh(126,3916
+def load_compressed(182,5866
+def load_kwargs(217,6949
+    def handle_scene(222,7059
+    def handle_trimesh_kwargs(238,7562
+    def handle_trimesh_export(245,7804
+def _parse_file_args(275,8744
+
+io/misc.py,97
+def load_off(7,54
+def load_wavefront(43,1119
+def load_msgpack(79,2372
+def load_dict(102,2908
+
+io/ply.py,343
+def load_ply(33,710
+def export_ply(60,1371
+def read_ply_header(116,2902
+def elements_to_kwargs(168,4789
+def element_colors(232,6988
+def ply_ascii(258,7646
+def ply_binary(321,9976
+    def populate_listsize(334,10392
+    def populate_data(366,11950
+    def elements_size(378,12454
+def export_draco(410,13685
+def load_draco(443,14806
+
+io/step.py,22
+def load_step(18,366
+
+io/stl.py,159
+class HeaderError(4,21
+def load_stl(18,541
+def load_stl_binary(51,1623
+def load_stl_ascii(104,3639
+def export_stl(151,5183
+def export_stl_ascii(176,5730
+
+io/xml_based.py,147
+def load_XAML(12,149
+    def element_to_color(28,594
+    def element_to_transform(43,1116
+def load_3DXML(145,5499
+def print_element(397,16370
+
+nsphere.py,105
+def minimum_nsphere(14,200
+def fit_nsphere(83,2921
+    def residuals(99,3330
+def is_nsphere(119,3917
+
+path/__init__.py,0
+
+path/arc.py,138
+def arc_center(10,227
+def discretize_arc(68,2317
+def arc_tangents(122,4224
+def arc_offset(133,4550
+def angles_to_threepoint(141,4824
+
+path/curve.py,107
+def discretize_bezier(7,102
+    def compute(20,553
+def discretize_bspline(51,1684
+def binomial(85,2893
+
+path/entities.py,753
+class Entity(18,421
+    def __init__(20,444
+    def _class_id(28,646
+    def hash(39,1066
+    def to_dict(51,1524
+    def rereference(59,1783
+    def closed(67,2091
+    def nodes(76,2356
+    def end_points(99,3369
+    def is_valid(112,3779
+    def reverse(115,3824
+    def explode(121,3969
+class Line(125,4016
+    def discrete(130,4084
+    def is_valid(134,4181
+    def explode(138,4287
+class Arc(144,4479
+    def closed(147,4513
+    def closed(153,4645
+    def discrete(156,4710
+    def center(161,4901
+class Curve(165,4984
+    def _class_id(168,5020
+    def nodes(172,5122
+class Bezier(179,5280
+    def discrete(181,5302
+class BSpline(185,5418
+    def __init__(187,5441
+    def discrete(191,5550
+    def to_dict(198,5849
+
+path/intersections.py,21
+def line_line(7,111
+
+path/io/__init__.py,0
+
+path/io/dxf_load.py,234
+def get_key(33,868
+def load_dxf(44,1099
+    def update_metadata(56,1392
+    def convert_line(71,1992
+    def convert_circle(76,2206
+    def convert_arc(85,2545
+    def convert_polyline(96,2967
+    def convert_bspline(116,3709
+
+path/io/export.py,433
+def export_path(15,346
+def export_dict(39,1084
+def export_svg(46,1300
+    def circle_to_svgpath(55,1542
+    def svg_arc(67,2129
+    def svg_line(95,3324
+    def move_to(107,3729
+    def convert_path(113,3937
+def export_dxf(136,4701
+    def format_points(149,4921
+    def entity_color_layer(163,5452
+    def convert_line(171,5695
+    def convert_arc(184,6392
+    def convert_generic(198,7142
+def _write_export(224,8169
+
+path/io/load.py,74
+def load_path(11,271
+def _create_path(38,1071
+def path_formats(50,1545
+
+path/io/misc.py,140
+def dict_to_path(12,190
+def lines_to_path(23,666
+def polygon_to_path(44,1354
+    def append_boundary(49,1488
+def faces_to_path(65,1922
+
+path/io/svg_load.py,168
+def svg_to_path(15,275
+    def complex_to_float(16,318
+    def load_line(19,413
+    def load_arc(27,710
+    def load_quadratic(36,1044
+    def load_cubic(45,1409
+
+path/packing.py,217
+class RectangleBin:RectangleBin11,191
+    def __init__(17,296
+    def insert(27,560
+    def split(66,2039
+def bounds_to_size(82,2595
+def pack_rectangles(86,2683
+def pack_paths(133,4476
+def multipack(154,5150
+
+path/path.py,2021
+class Path(36,692
+    def __init__(44,948
+    def process(69,1685
+    def vertices(77,1883
+    def vertices(81,1959
+    def md5(84,2044
+    def paths(90,2191
+    def kdtree(102,2505
+    def scale(107,2620
+    def bounds(112,2724
+    def extents(117,2876
+    def units(121,2961
+    def explode(127,3100
+    def fill_gaps(136,3396
+    def is_closed(163,4352
+    def vertex_graph(167,4476
+    def units(172,4596
+    def convert_units(175,4664
+    def apply_transform(178,4757
+    def rezero(182,4940
+    def merge_vertices(188,5090
+    def replace_vertex_references(200,5641
+    def remove_entities(204,5787
+    def remove_invalid(213,6072
+    def remove_duplicate_entities(217,6225
+    def referenced_vertices(223,6501
+    def remove_unreferenced_vertices(229,6696
+    def discretize_path(242,7270
+    def paths_to_splines(253,7648
+    def export(280,8780
+    def to_dict(285,8963
+    def copy(289,9066
+    def show(292,9117
+    def __add__(298,9263
+class Path3D(314,9841
+    def _process_functions(316,9862
+    def discrete(324,10143
+    def to_planar(328,10255
+    def scene(368,11810
+    def show(380,12104
+    def plot_discrete(386,12217
+    def plot_entities(396,12541
+class Path2D(408,12918
+    def _process_functions(410,12939
+    def apply_obb(415,13110
+    def body_count(425,13412
+    def to_3D(428,13469
+    def polygons_full(444,14003
+    def area(470,15072
+    def perimeter(478,15273
+    def extrude(489,15567
+    def medial_axis(520,16779
+    def connected_paths(550,17938
+    def simplify(573,18742
+    def split(584,19047
+    def plot_discrete(624,20863
+        def plot_transformed(631,21091
+    def plot_entities(647,21743
+    def identifier(670,22721
+    def identifier_md5(683,23095
+    def polygons_valid(690,23261
+    def discrete(701,23581
+    def polygons_closed(712,23879
+        def reverse_path(723,24310
+    def root(765,26097
+    def enclosure(778,26439
+    def enclosure_directed(787,26684
+    def enclosure_shell(797,26972
+
+path/polygons.py,778
+def polygons_enclosure_tree(18,427
+def polygons_obb(48,1577
+def polygon_obb(59,1906
+def transform_polygon(80,2530
+def rasterize_polygon(93,3005
+    def fill(115,3674
+    def handler_multi(125,4052
+    def handler_line(129,4184
+    def handler_null(132,4238
+def plot_polygon(155,4978
+    def plot_single(158,5053
+def plot_raster(172,5410
+def resample_boundaries(190,6118
+    def resample_boundary(191,6175
+def stack_boundaries(208,6822
+def medial_axis(216,7051
+    def contains(235,7836
+class InversePolygon:InversePolygon247,8219
+    def __init__(255,8429
+    def distances(275,9232
+    def distance(290,9624
+def polygon_hash(306,9980
+def random_polygon(326,10439
+def polygon_scale(351,11271
+def path_to_polygon(357,11403
+def repair_invalid(365,11570
+
+path/simplify.py,379
+def fit_circle_check(14,238
+def is_circle(99,3105
+def arc_march(131,4024
+    def finalize_arc(143,4287
+def merge_colinear(251,8019
+def resample_spline(304,9821
+def points_to_spline_entity(323,10369
+def three_point(347,11047
+def polygon_to_cleaned(366,11402
+def simplify_path(384,11859
+def simplify_basic(439,13774
+def pair_space(481,15001
+def infill_lines(489,15192
+
+path/traversal.py,350
+def vertex_graph(12,205
+def vertex_to_entity_path(27,605
+    def edge_direction(42,1091
+def connected_open(93,2838
+def closed_paths(105,3174
+def arctan2_points(131,4126
+def discretize_path(138,4280
+class PathSample:PathSample159,4967
+    def __init__(161,4986
+    def sample(178,5704
+    def truncate(195,6500
+def resample_path(219,7364
+
+path/util.py,50
+def angles_to_threepoint(4,21
+def is_ccw(13,324
+
+permutate.py,210
+def transform(7,71
+def noise(34,953
+def tesselation(64,1923
+class Permutator:Permutator106,3529
+    def __init__(108,3548
+    def transform(114,3696
+    def noise(117,3759
+    def tesselation(120,3841
+
+points.py,595
+def point_plane_distance(13,186
+def major_axis(19,394
+def plane_fit(28,598
+def radial_sort(55,1291
+def project_to_plane(86,2261
+def absolute_orientation(122,3544
+def remove_close(186,5722
+def remove_close_set(205,6291
+def k_means(223,6990
+def plot_points(252,7860
+class PointCloud(274,8414
+    def __init__(280,8538
+    def md5(290,8790
+    def bounds(294,8856
+    def extents(299,8998
+    def centroid(303,9075
+    def vertices(307,9156
+    def vertices(311,9240
+    def vertices_color(318,9478
+    def vertices_color(322,9580
+    def scene(325,9661
+    def show(329,9749
+
+primitives.py,1359
+class _Primitive(15,217
+    def __init__(21,387
+    def faces(27,559
+    def faces(35,770
+    def vertices(39,881
+    def vertices(48,1105
+    def face_normals(53,1257
+    def face_normals(61,1496
+    def copy(65,1642
+    def to_mesh(73,1823
+    def _create_mesh(83,2170
+class _PrimitiveAttributes(87,2269
+    def __init__(92,2375
+    def __getattr__(115,3564
+    def __setattr__(122,3867
+    def __dir__(137,4502
+class Cylinder(143,4644
+    def __init__(145,4673
+    def volume(167,5422
+    def moment_inertia(179,5731
+    def direction(195,6251
+    def _create_mesh(206,6524
+class Capsule(222,7161
+    def __init__(224,7189
+    def direction(246,7923
+    def _create_mesh(257,8195
+class Sphere(272,8748
+    def __init__(274,8775
+    def bounds(296,9469
+    def bounding_box_oriented(305,9871
+    def area(314,10241
+    def volume(327,10537
+    def moment_inertia(340,10837
+    def _create_mesh(352,11186
+class Box(362,11533
+    def __init__(364,11557
+    def sample_volume(381,12130
+    def sample_grid(398,12677
+    def is_oriented(434,13958
+    def volume(445,14319
+    def _create_mesh(456,14555
+class Extrusion(466,14904
+    def __init__(468,14934
+    def area(492,15788
+    def volume(509,16296
+    def direction(523,16645
+    def slide(537,17132
+    def buffer(553,17675
+    def _create_mesh(569,18237
+
+proximity.py,288
+def nearby_faces(11,179
+def closest_point_naive(54,1618
+def closest_point(98,3269
+def signed_distance(164,5908
+class ProximityQuery(206,7188
+    def __init__(211,7279
+    def on_surface(215,7351
+    def vertex(233,7922
+    def signed_distance(249,8391
+    def contains(267,8971
+
+ray/__init__.py,0
+
+ray/ray_pyembree.py,235
+class RayMeshIntersector:RayMeshIntersector19,443
+    def __init__(21,470
+    def _scene(26,630
+    def intersects_location(34,850
+    def intersects_id(61,1784
+    def intersects_first(178,6815
+    def intersects_any(201,7532
+
+ray/ray_triangle.py,290
+class RayMeshIntersector:RayMeshIntersector14,241
+    def __init__(20,394
+    def tree(25,512
+    def intersects_id(32,730
+    def intersects_location(67,2207
+    def intersects_any(94,3204
+def ray_triangle_id(119,4002
+def ray_triangle_candidates(204,7593
+def ray_bounds(242,8878
+
+ray/ray_util.py,26
+def contains_points(4,21
+
+remesh.py,20
+def subdivide(6,56
+
+repair.py,172
+def fix_face_winding(12,254
+def fix_normals_direction(58,2159
+def fix_normals(77,2803
+def broken_faces(88,3128
+def fill_holes(103,3648
+    def hole_to_faces(115,3993
+
+resources/__init__.py,23
+def get_resource(4,44
+
+sample.py,152
+def sample_surface(7,71
+def volume_mesh(64,2025
+def volume_rectangular(84,2595
+def sample_surface_even(108,3276
+def sample_surface_sphere(121,3618
+
+scene/__init__.py,0
+
+scene/scene.py,514
+class Scene:Scene13,249
+    def __init__(22,521
+    def add_geometry(42,1060
+    def md5(91,2860
+    def bounds(107,3274
+    def extents(138,4460
+    def scale(149,4744
+    def centroid(160,4994
+    def triangles(172,5297
+    def triangles_node(200,6246
+    def duplicate_nodes(212,6580
+    def set_camera(242,7749
+    def dump(274,8855
+    def export(288,9280
+    def save_image(340,11545
+    def explode(347,11796
+    def show(377,12874
+        def viewer(382,13055
+def split_scene(392,13271
+
+scene/transforms.py,825
+class TransformForest:TransformForest10,108
+    def __init__(12,132
+    def update(21,375
+    def md5(65,1806
+    def to_flattened(74,1992
+    def to_edgelist(91,2555
+    def load(106,2981
+    def nodes(111,3134
+    def nodes_geometry(115,3221
+    def get(118,3332
+    def show(165,4874
+    def to_svg(173,5073
+    def __getitem__(179,5206
+    def __setitem__(182,5268
+    def clear(188,5483
+    def _get_path(193,5609
+class EnforcedForest(220,6451
+    def __init__(222,6486
+    def add_edge(237,7078
+    def add_edges_from(265,8161
+    def add_path(268,8287
+    def remove_edge(271,8407
+    def remove_edges_from(275,8571
+    def disconnect_path(279,8753
+    def shortest_path_undirected(284,8934
+    def get_edge_data_direction(288,9057
+def path_to_edges(299,9375
+def kwargs_to_matrix(306,9544
+
+scene/viewer.py,893
+class SceneViewer(16,234
+    def __init__(18,276
+    def _redraw(69,2112
+    def _update_meshes(72,2159
+    def _add_mesh(77,2356
+    def _add_path(89,2795
+    def _add_points(95,3036
+    def add_geometry(101,3402
+    def reset_view(113,3974
+    def init_gl(137,4738
+    def toggle_culling(175,6270
+    def toggle_wireframe(179,6379
+    def update_flags(183,6500
+    def on_resize(194,6832
+    def on_mouse_press(203,7215
+    def on_mouse_drag(206,7312
+    def on_mouse_scroll(218,7837
+    def on_key_press(221,7946
+    def on_draw(229,8224
+    def node_flag(285,10391
+    def save_image(292,10632
+    def flip(296,10779
+def _view_transform(308,11109
+def geometry_md5(320,11478
+def mesh_to_vertex_list(327,11626
+def path_to_vertex_list(347,12290
+def points_to_vertex_list(362,12827
+def _validate_colors(381,13370
+def _gl_matrix(414,14431
+def _gl_vector(423,14682
+
+transformations.py,1970
+def identity_matrix(207,8574
+def translation_matrix(222,8845
+def translation_from_matrix(235,9112
+def reflection_matrix(247,9410
+def reflection_from_matrix(273,10079
+def rotation_matrix(302,11132
+def rotation_from_matrix(346,12723
+def scale_matrix(389,14384
+def scale_from_matrix(423,15462
+def projection_matrix(464,16927
+def projection_from_matrix(526,19366
+def clip_matrix(599,22243
+def shear_matrix(651,24369
+def shear_from_matrix(682,25570
+def decompose_matrix(727,27170
+def compose_matrix(812,29772
+def orthogonalization_matrix(865,31469
+def affine_matrix_from_points(892,32328
+def superimposition_matrix(1001,36580
+def euler_matrix(1052,38463
+def euler_from_matrix(1115,40275
+def euler_from_quaternion(1173,42179
+def quaternion_from_euler(1184,42504
+def quaternion_about_axis(1241,43852
+def quaternion_matrix(1257,44255
+def quaternion_from_matrix(1285,45159
+def quaternion_multiply(1362,47842
+def quaternion_conjugate(1378,48395
+def quaternion_inverse(1392,48715
+def quaternion_real(1406,49057
+def quaternion_imag(1416,49219
+def quaternion_slerp(1426,49439
+def random_quaternion(1467,50597
+def random_rotation_matrix(1495,51332
+class Arcball(1510,51731
+    def __init__(1534,52357
+    def place(1559,53221
+    def setaxes(1572,53598
+    def constrain(1580,53821
+    def constrain(1585,53954
+    def down(1589,54076
+    def drag(1599,54553
+    def next(1612,55085
+    def matrix(1617,55310
+def arcball_map_to_sphere(1622,55429
+def arcball_constrain_to_axis(1635,55844
+def arcball_nearest_axis(1651,56315
+def vector_norm(1684,57537
+def unit_vector(1723,58598
+def random_vector(1767,59858
+def vector_product(1782,60185
+def angle_between_vectors(1803,60848
+def inverse_matrix(1834,61968
+def concatenate_matrices(1850,62402
+def is_same_transform(1866,62786
+def planar_matrix(1882,63269
+def planar_matrix_to_3D(1912,63969
+def spherical_matrix(1939,64672
+def transform_points(1961,65255
+def is_rigid(1994,66362
+
+triangles.py,436
+def cross(9,115
+def area(22,434
+def normals(46,1079
+def all_coplanar(60,1497
+def any_coplanar(80,2232
+def mass_properties(100,2989
+def windings_aligned(189,6230
+def bounds_tree(213,6982
+def nondegenerate(237,7649
+def extents(266,8444
+def barycentric_to_points(312,9833
+def points_to_barycentric(344,10997
+    def method_cross(369,11861
+    def method_cramer(381,12379
+def closest_point(414,13784
+def to_kwargs(483,16497
+
+units.py,99
+def unit_conversion(36,1128
+def validate(53,1595
+def unit_guess(65,1831
+def _set_units(75,2033
+
+util.py,2628
+def unitize(38,748
+def euclidean(77,1982
+def is_file(84,2114
+def is_string(88,2166
+def is_dict(92,2227
+def is_none(96,2280
+def is_sequence(106,2461
+def is_shape(124,2959
+def make_sequence(192,4775
+def vector_hemisphere(206,5141
+def vector_to_spherical(253,6617
+def spherical_to_vector(271,7214
+    def multi_dot(295,7946
+def diagonal_dot(308,8390
+def three_dimensionalize(320,8650
+def grid_arange(356,9492
+def grid_linspace(384,10386
+def replace_references(411,11238
+def multi_dict(420,11500
+def tolist_dict(442,12019
+    def tolist(443,12042
+def is_binary_file(452,12244
+def distance_to_end(471,12698
+def decimal_to_digits(491,13137
+def hash_file(511,13608
+def md5_object(540,14385
+def md5_array(558,14677
+def attach_to_log(578,15183
+def tracked_array(615,16481
+class TrackedArray(625,16729
+    def __array_finalize__(635,16948
+    def md5(647,17355
+    def crc(664,18002
+    def __hash__(673,18303
+    def __setitem__(679,18467
+    def __setslice__(684,18623
+def cache_decorator(690,18788
+    def get_cached(692,18840
+class Cache:Cache706,19280
+    def __init__(711,19366
+    def get(720,19637
+    def verify(731,19910
+    def clear(745,20463
+    def update(754,20714
+    def id_set(762,20933
+    def set(765,21002
+    def __getitem__(770,21109
+    def __setitem__(773,21171
+    def __contains__(776,21247
+    def __len__(780,21336
+    def __enter__(784,21413
+    def __exit__(787,21463
+class DataStore:DataStore792,21566
+    def __init__(797,21675
+    def mutable(801,21737
+    def mutable(807,21885
+    def is_empty(813,22048
+    def clear(825,22371
+    def __getitem__(828,22416
+    def __setitem__(834,22545
+    def __contains__(837,22629
+    def __len__(840,22695
+    def values(843,22749
+    def update(846,22806
+    def md5(852,23016
+    def crc(859,23237
+def stack_lines(866,23435
+def append_faces(910,24395
+def array_to_string(938,25188
+def array_to_encoded(996,27076
+def decode_keys(1034,28230
+def encoded_to_array(1056,28772
+def is_instance_named(1092,29862
+def type_bases(1113,30282
+def type_named(1129,30771
+def concatenate(1152,31348
+def submesh(1185,32326
+def zero_pad(1277,35754
+def format_json(1301,36274
+class Words:Words1322,36859
+    def __init__(1329,37085
+    def random_phrase(1340,37514
+def convert_like(1373,38473
+def bounds_tree(1401,39124
+def wrap_as_stream(1449,40905
+def histogram_peaks(1470,41347
+def sigfig_round(1542,43712
+def sigfig_int(1574,44456
+def decompress(1607,45480
+    def is_zip(1623,45884
+    def is_tar(1630,46101
+def split_extension(1646,46527
+def triangle_strips_to_faces(1671,47211
+
+version.py,0
+
+visual.py,745
+class ColorVisuals(33,908
+    def __init__(38,995
+    def transparency(72,2297
+    def defined(90,2813
+    def kind(101,3050
+    def _verify_crc(119,3433
+    def crc(153,4746
+    def face_colors(167,5114
+    def face_colors(180,5446
+    def vertex_colors(207,6335
+    def vertex_colors(218,6630
+    def _get_colors(243,7514
+    def update_vertices(331,11036
+    def update_faces(337,11209
+    def face_subset(343,11374
+    def concatenate(359,11845
+    def __add__(376,12348
+    def _update_key(391,12753
+def create_visual(406,13135
+def to_rgba(423,13475
+def concatenate_visuals(466,14708
+def random_color(504,15888
+def vertex_to_face_color(526,16443
+def face_to_vertex_color(544,16868
+def colors_to_materials(568,17474
+
+voxel.py,473
+class Voxel:Voxel9,95
+    def __init__(11,109
+    def _id(24,555
+    def run(32,799
+    def pitch(54,1744
+    def origin(65,2004
+    def shape(77,2301
+    def filled_count(88,2587
+    def raw(103,2983
+    def volume(114,3239
+    def points(126,3544
+    def mesh(140,3935
+    def point_to_index(155,4386
+    def is_filled(174,4924
+    def show(194,5461
+def mesh_to_run(202,5663
+def run_to_raw(273,8258
+def raw_to_points(293,8782
+def run_to_mesh(311,9255

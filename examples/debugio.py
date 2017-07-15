@@ -2,36 +2,41 @@ import numpy as np
 import trimesh
 
 # load a file by name or from a buffer
-#mesh = trimesh.load_mesh('../models/featuretype.STL')
-mesh = trimesh.load_mesh('../models/j39binary.fbx')
-# mesh = trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
-  #                       '/64907_Fanuc_430_Robot/armature_rigging_groups'
-    #                     '-binary-7.4-z-forward-y-up.fbx')
+# mesh = trimesh.load_mesh('../models/featuretype.STL')
+# mesh = trimesh.load_mesh('../models/ADIS16480.STL')
+# mesh = trimesh.load.mesh('../models/unit_sphere.STL')
+# mesh = trimesh.load_mesh('../models/j39binary.fbx')
+mesh = trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh'
+                         '/64907_Fanuc_430_Robot/armature_rigging_groups'
+                         '-binary-7.4-z-forward-y-up.fbx')
 # mesh = trimesh.load_mesh('../../Ops-robotics-rsimcon/content/raw/mesh
 # /64907_Fanuc_430_Robot/j3-9-binary.fbx')
 
 
 # is the current mesh watertight?
-mesh.is_watertight
+print ({"watertight_q": mesh.is_watertight})
 
 # what's the euler number for the mesh?
-mesh.euler_number
+print ({"euler_number": mesh.euler_number})
 
 # the convex hull is another Trimesh object that is available as a property
 # lets compare the volume of our mesh with the volume of its convex hull
-np.divide(mesh.volume, mesh.convex_hull.volume)
+print ({"volume_by_convex_hull_ratio": np.divide(mesh.volume,
+                                                 mesh.convex_hull.volume)})
 
 # since the mesh is watertight, it means there is a
 # volumetric center of mass which we can set as the origin for our mesh
 mesh.vertices -= mesh.center_mass
 
 # what's the moment of inertia for the mesh?
-mesh.moment_inertia
+print ({"geometric_moment_of_inertia": mesh.moment_inertia})
 
 # if there are multiple bodies in the mesh we can split the mesh by
 # connected components of face adjacency
 # since this example mesh is a single watertight body we get a list of one mesh
 mesh.split()
+
+print ({"number_of_facets": len(mesh.facets)})
 
 # facets are groups of coplanar adjacent faces
 # set each facet to a random color

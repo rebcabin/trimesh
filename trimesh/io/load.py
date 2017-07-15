@@ -91,6 +91,36 @@ def load(file_obj, file_type=None, **kwargs):
 
     return loaded
 
+@_log_time
+def load_meshes(file_obj, file_type=None, **kwargs):
+    '''Produce a list of loaded mesh dictionaries, one for each mesh in the
+    file. Does not have the restrictive kwargs behavior of "load_mesh."
+    This is a temporary short cut until we can construct a proper scene from
+    multiple meshes. It's also redundant with "load_mesh", but this is
+    work-in-progress and I am minimizing splash damage.'''
+
+    def process_one_mesh (mesh, loader, kwargs):
+        kwargs_copy = copy.deepcopy(kwargs)
+        kwargs_copy.update(mesh)
+        k_trouble = 'vertex_colors'
+        if k_trouble in kwargs_copy and not kwargs_copy[k_trouble]:
+            kwargs_copy.pop(k_trouble)
+        log.debug('loaded mesh in list using %s', loader.__name__)
+        return load_kwargs(kwargs_copy)
+
+    (file_obj, file_type, metadata) = _parse_file_args(file_obj, file_type)
+    loader = mesh_loaders[file_type]
+    meshes = loader(file_obj, file_type)
+    if not isinstance(meshes, list):
+        log.debug('expected list of meshes from loader')
+        return None
+    else:
+        return map(
+            lambda mesh: process_one_mesh(mesh, loader, kwargs),
+            meshes)
+
+def find_this_function ():
+    pass
 
 @_log_time
 def load_mesh(file_obj, file_type=None, **kwargs):
@@ -119,8 +149,10 @@ def load_mesh(file_obj, file_type=None, **kwargs):
     loader_keys = mesh_loaders[file_type](file_obj, file_type)
     # [bbeckman: introduce the variable above to track in the debugger.
     # Apparently, the fbx loader produces a list of dictionaries, whereas the
-    # STL loader, used in all the examples in trimesh, produces a disctionary.
+    # STL loader, used in all the examples in trimesh, produces a dictionary.
     # That trips up kwargs.update. We'll just work around it for our cases.]
+    # [bbeckman: we can't work around it any more; need to figure out how to
+    # handle multiple meshes.]
     if isinstance(loader_keys, list):
         kwargs.update(loader_keys[0])
     else:

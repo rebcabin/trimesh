@@ -7,17 +7,26 @@ The API is mostly stable, but this should not be relied on and is not guaranteed
 
 ## Installation
 
+
+The minimum set of packages required to import trimesh are
+[numpy](http://www.numpy.org/), [scipy](http://www.scipy.org) and
+[networkx](https://networkx.github.io). Installing other packages mentioned adds functionality but is not required.
+
 The easiest and recommended way to get the most functionality out of Trimesh is to install a [conda environment](https://conda.io/miniconda.html), then:
 
 ```bash
 
 # cyassimp is a fast binding for the assimp importers
+# note that it installs cleanly in Linux and Windows
+# but generally fails on OSX
 conda install -c menpo/label/master cyassimp
 
 # install modules for spatial indexing, polygon manipulation, and fast ray-mesh queries
+# these generally install cleanly on Linux, Windows, and OSX
 conda install -c conda-forge rtree shapely
 
 # install Trimesh and soft dependencies that are easy to install
+# these generally install cleanly on Linux, Windows, and OSX
 pip install trimesh[easy]
 
 ```
