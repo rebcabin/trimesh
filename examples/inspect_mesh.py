@@ -5,9 +5,7 @@ import pprint
 data_home_directory = '../../Ops-robotics-rsimcon/content/raw/mesh' \
                       '/64907_Fanuc_430_Robot/'
 
-the_mesh = 'armature_rigging_groups_submesh_019_repaired.obj'
-the_mesh = 'test_submesh_001_repaired.obj'
-the_meshes = [('test_submesh_%0.3d_repaired.obj' % (i+1)) for i in range(21)]
+the_meshes = [('armature_rigging_groups_submesh_%0.3d_repaired.obj' % (i+1)) for i in range(21)]
 
 def short (collection, near = 3):
     """Friendly subsetting for notebooks. Casts its argument to a list."""
@@ -19,8 +17,8 @@ def short (collection, near = 3):
     else:
         return lyst
 
-def inspect_a_mesh (filenym):
-    meshes = [trimesh.load_mesh(data_home_directory + filenym)]
+def inspect_a_mesh (mesh_file_name):
+    meshes = [trimesh.load_mesh(data_home_directory + mesh_file_name)]
 
     for i in range(len(meshes)):
         mesh = meshes[i]
@@ -28,7 +26,7 @@ def inspect_a_mesh (filenym):
         pp.pprint({
             'mesh_number': i + 1
             , 'asset_dir': data_home_directory
-            , 'file_name': the_mesh
+            , 'file_name': mesh_file_name
             , "n_vertices": len(mesh.vertices)
             , "area": mesh.area
             , "is_winding_consistent": mesh.is_winding_consistent

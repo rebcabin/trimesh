@@ -60,7 +60,7 @@ for i in range(len(meshes)):
     #             'collada')
 
     mesh.export(data_home_directory +
-                'test_submesh_%0.3d.off' % (i+1),
+                'armature_rigging_groups_submesh_%0.3d.off' % (i+1),
                 'off')
 
     mesh.show()
